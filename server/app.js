@@ -48,6 +48,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+
+app.get('/', function (req, res) {
+  res.sendfile(path.join(__dirname + './../client/src/index.html'));
+});
 // require routes
 var routes = require('./routes/api');
 // routes

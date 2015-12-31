@@ -1,0 +1,11 @@
+body{
+	color:green;
+	background-color:black;
+}
+
+section {
+  @include linear-gradient(to top, red, orange);
+  border-radius:20px;
+  visibility: hidden;
+  transition:all 0.2s ease;
+}
