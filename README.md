@@ -3,7 +3,10 @@
 npm install<br>
 bower install<br>
 <h1>Run</h1>
-gulp
+gulp<br>
+<h1>Run Server</h1>
+cd server<br>
+node server.js
 <h1>Tools includes</h1>
 This starter is include with<br>
 jquery<br>
