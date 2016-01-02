@@ -15,7 +15,9 @@ var gulp 			= require('gulp'),
 
 gulp.task('serve',function(){
 	browserSync.init({
-		server: 'client/dist'
+		server: {
+            baseDir: ["./", "client/dist"]   //added multiple directories 
+        }
 	});
 
 	gulp.watch('client/dist/index.html').on('change',reload);

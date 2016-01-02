@@ -1,1 +1,4 @@
-alert('ggggggggggggssasdasdsgssfffssss');
+
+$(document).ready(function() {
+    console.log("ready!");
+});
