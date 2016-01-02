@@ -20,12 +20,21 @@ gulp.task('serve',function(){
         }
 	});
 
+	gulp.watch('client/dist/libs/**/*').on('change',reload);
 	gulp.watch('client/dist/index.html').on('change',reload);
 	gulp.watch('client/dist/**/*.html').on('change',reload);
-	gulp.watch('client/src/images/**/*').on('change',reload);
+	gulp.watch('client/dist/images/**/*').on('change',reload);
 	gulp.watch('client/dist/**/*.css').on('change',reload);
 	gulp.watch('client/dist/**/*.js').on('change',reload);
 });
+
+gulp.task('libs' ,function(){
+	gulp.src('client/src/libs/**/*')
+		.on('error', console.error.bind(console))
+		.pipe(gulp.dest('client/dist/libs'))
+		.pipe(notify({ message: 'Libs task complete' }));
+})
+
 
 gulp.task('views', function(){
 	gulp.src('client/src/index.html')
@@ -72,6 +81,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('watch',function(){
+	gulp.watch('client/src/libs/**/*',['libs']);
 	gulp.watch(['client/src/index.html','client/src/**/*.html'], ['views']);
 	gulp.watch('client/src/images/**/*',['images']);
 	gulp.watch('client/src/**/*.scss',['styles']);
@@ -83,6 +93,6 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('views', 'images', 'styles', 'scripts', 'watch', 'serve');
+  gulp.start('libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve');
 });
 
