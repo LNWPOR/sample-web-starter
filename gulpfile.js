@@ -31,8 +31,8 @@ gulp.task('serve',function(){
 gulp.task('libs' ,function(){
 	gulp.src('client/src/libs/**/*')
 		.on('error', console.error.bind(console))
-		.pipe(gulp.dest('client/dist/libs'))
-		.pipe(notify({ message: 'Libs task complete' }));
+		.pipe(gulp.dest('client/dist/libs'));
+		//.pipe(notify({ message: 'Libs task complete' }));
 })
 
 
@@ -42,8 +42,8 @@ gulp.task('views', function(){
 		.pipe(gulp.dest('client/dist'));
 	gulp.src('client/src/**/*.html')
 		.on('error', console.error.bind(console))
-		.pipe(gulp.dest('client/dist'))
-		.pipe(notify({ message: 'Views task complete' }));
+		.pipe(gulp.dest('client/dist'));
+		//.pipe(notify({ message: 'Views task complete' }));
 
 });
 
@@ -54,8 +54,8 @@ gulp.task('styles',function(){
     			.pipe(gulp.dest('client/dist/styles'))
     			.pipe(rename({ suffix: '.min' }))
     			.pipe(minifycss())
-    			.pipe(gulp.dest('client/dist/styles'))
-				.pipe(notify({ message: 'Styles task complete' }));
+    			.pipe(gulp.dest('client/dist/styles'));
+				//.pipe(notify({ message: 'Styles task complete' }));
 });
 
 gulp.task('scripts',function(){
@@ -68,16 +68,16 @@ gulp.task('scripts',function(){
 		.pipe(gulp.dest('client/dist/scripts'))
 		.pipe(rename({ suffix: '.min' }))
     	.pipe(uglify())
-    	.pipe(gulp.dest('client/dist/scripts'))
-    	.pipe(notify({ message: 'Scripts task complete' }));
+    	.pipe(gulp.dest('client/dist/scripts'));
+    	//.pipe(notify({ message: 'Scripts task complete' }));
 });
 
 gulp.task('images', function() {
    	gulp.src('client/src/images/**/*')
    		.on('error', console.error.bind(console))
     	.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    	.pipe(gulp.dest('client/dist/images'))
-    	.pipe(notify({ message: 'Images task complete' }));
+    	.pipe(gulp.dest('client/dist/images'));
+    	//.pipe(notify({ message: 'Images task complete' }));
 });
 
 gulp.task('watch',function(){
