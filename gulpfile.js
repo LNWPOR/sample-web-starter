@@ -15,9 +15,9 @@ var gulp 			= require('gulp'),
 
 gulp.task('serve',function(){
 	browserSync.init({
-		server: {
-            baseDir: ["./", "client/dist"]   //added multiple directories 
-        }
+		server: { 
+			baseDir: ["./", "client/dist"]
+		}
 	});
 
 	gulp.watch('client/dist/libs/**/*').on('change',reload);
@@ -88,11 +88,13 @@ gulp.task('watch',function(){
 	gulp.watch('client/src/**/*.ts',['scripts']);
 });
 
+
+//always run this task first
 gulp.task('clean', function() {
     return del(['client/dist']);
 });
 
-gulp.task('default', ['clean'], function() {
-  gulp.start('libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve');
+gulp.task('default', ['libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve'], function() {
+  //gulp.start('libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve');
 });
 
