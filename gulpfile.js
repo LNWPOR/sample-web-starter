@@ -20,6 +20,7 @@ gulp.task('serve',function(){
 		}
 	});
 
+
 	gulp.watch('client/dist/libs/**/*').on('change',reload);
 	gulp.watch('client/dist/index.html').on('change',reload);
 	gulp.watch('client/dist/**/*.html').on('change',reload);
@@ -94,7 +95,7 @@ gulp.task('clean', function() {
     return del(['client/dist']);
 });
 
-gulp.task('default', ['libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve'], function() {
+gulp.task('default', ['libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve']);//,function() {
   //gulp.start('libs', 'views', 'images', 'styles', 'scripts', 'watch', 'serve');
-});
+//});
 
