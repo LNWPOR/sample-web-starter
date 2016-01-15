@@ -15,6 +15,7 @@ npm run clean (to delete production project)<br>
 you can use ts,jsx by editing the entry point in webpack.config.js file<br>
 <br>
 <h2>server side</h2>
+cd server
 npm install<br>
 node server.js<br>
 you can edit rounting in app.js and api in server.js<br>
