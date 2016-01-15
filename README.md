@@ -24,6 +24,7 @@ you can edit routing in app.js and api in server.js<br>
 sass<br>
 bourbon<br>
 neat<br>
+jquery<br>
 ts<br>
 jsx<br>
 minify
