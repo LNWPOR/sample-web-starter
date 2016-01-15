@@ -1,5 +1,5 @@
-/bower_components
-/node_modules
-/.sass-cache
-/client/dist
+/client/bower_components
+/client/node_modules
+/client/build
 /client/src/libs
+/server/node_modules
