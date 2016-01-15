@@ -4,7 +4,7 @@ var path = require('path'),
 
  
 module.exports = {
-    
+    //remove 'webpack/hot/dev-server' and then build to use build/index.html with server
     entry: [
             'webpack/hot/dev-server',
             path.resolve(__dirname, 'src/app/app.js')
