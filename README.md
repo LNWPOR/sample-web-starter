@@ -1,6 +1,6 @@
 This sample project have 2 part<br>
-1:client side<br>
-2:server side<br>
+1.client side<br>
+2.server side<br>
 <br>
 <h1>Installation</h1>
 <h2>client side</h2>
