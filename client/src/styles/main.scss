@@ -4,4 +4,10 @@
 @import './base/_variables.scss';
 @import './base/_mixins.scss';
 
-@import '../components/navbar/navbar.scss'
+// @import '../app/navbar/navbar.scss'
+
+$colorP :green;
+
+h1{
+	color:$colorP;
+}
