@@ -6,7 +6,7 @@ var $ = require('jquery');
 
 
 
-var img = require('../images/newicon2.jpg');
+// var img = require('../images/newicon2.jpg');
 // import greeter = require('./navbar/navbar.ts'); 
 // console.log(greeter('test'));
 // console.log('ggggsssgg');
