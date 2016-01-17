@@ -26,7 +26,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "watch": "webpack-dev-server --content-base build/ --hot",
+    "serve": "webpack-dev-server --content-base build/ --hot",
     "build": "npm run clean && webpack --progress",
     "clean": "rm -rf build/*",
     "deploy": "webpack -p --config webpack.production.config.js"
