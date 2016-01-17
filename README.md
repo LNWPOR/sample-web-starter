@@ -8,9 +8,10 @@ cd client<br>
 npm install<br>
 bower install<br>
 <br>
-npm run build (to build production project)<br>
-npm run watch (to use livereload)<br>
+npm run build (to build project)<br>
+npm run serve (to use livereload)<br>
 npm run clean (to delete production project)<br>
+npm run deploy (to build the production version)<br>
 <br>
 you can use ts,jsx by editing the entry point in webpack.config.js file<br>
 <br>
