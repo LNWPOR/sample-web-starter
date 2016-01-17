@@ -26,7 +26,8 @@
   "scripts": {
     "watch": "webpack-dev-server --content-base build/ --hot",
     "build": "npm run clean && webpack --progress",
-    "clean": "rm -rf build/*"
+    "clean": "rm -rf build/*",
+    "deploy": "webpack -p --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC"
