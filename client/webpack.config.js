@@ -6,11 +6,11 @@ var path = require('path'),
 module.exports = {
     entry: [
             'webpack/hot/dev-server',
-            path.resolve(__dirname, 'src/app/app.js') //change to 'src/app/app.ts' if you want to use ts
+            path.resolve(__dirname, 'src/app/app.js')
         ],
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.min.js'
+        filename: 'bundle.js'
     },
     
     // Turn on sourcemaps
@@ -58,11 +58,6 @@ module.exports = {
         }),
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-        ),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
+        )
     ]
 };
