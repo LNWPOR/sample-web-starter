@@ -1,7 +1,6 @@
 var path = require('path'),
     webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
-
  
 module.exports = {
     entry: [
@@ -15,8 +14,7 @@ module.exports = {
     // Turn on sourcemaps
     devtool: 'source-map',
     resolve: {
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js'],
-        root: [path.join(__dirname, "src/libs")]
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
     },
 
     module: {
@@ -27,26 +25,32 @@ module.exports = {
             },
             {
                 test: /\.js?$/,
-                loader: 'babel-loader'
+                loader: 'babel'
             },
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader'
+                loader: 'babel'
             },
             {   test: /\.ts$/, 
-                loader: 'ts-loader' 
-            },
-            {
-                test: /\.css$/,     
-                loader: 'style-loader!css-loader' 
+                loader: 'ts' 
             },
             {
                 test: /\.scss$/,
-                loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+                include: /src/,
+                loaders: [
+                    'style',
+                    'css',
+                    'autoprefixer?browsers=last 3 versions',
+                    'sass?outputStyle=expanded'
+                ]
             },
-            {   
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192'
+            {
+                test: /\.(woff|woff2|ttf|eot)$/,
+                loader: 'file?name=assets/[name]-[hash:6].[ext]'
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: 'file?name=images/[name]-[hash:6].[ext]!img?minimize&optimizationLevel=5&progressive=true'
             }
         ]
     },
@@ -55,9 +59,6 @@ module.exports = {
             template: 'src/index.html', // Load a custom template
             inject: 'body' // Inject all scripts into the body
         }),
-        new webpack.ResolverPlugin(
-            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-        ),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
